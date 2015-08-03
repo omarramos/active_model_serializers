@@ -65,6 +65,7 @@ end
             ArraySerializer
           end
         else
+          return DefaultSerializer if resource.class == Hash
           _const_get build_serializer_class(resource, options)
         end
       end
